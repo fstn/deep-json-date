@@ -1,7 +1,7 @@
 import * as moment from 'moment';
-import {walkEntityPropertyAndMapDateStrAsMoment} from "./transform-date-string";
+import {walkPropertiesAndMapDateStrAsMoment} from "./index";
 
-describe('walkEntityPropertyAndMapDateStrAsMoment', () => {
+describe('walkPropertiesAndMapDateStrAsMoment', () => {
 
   it('should map date as moment', async () => {
 
@@ -21,7 +21,7 @@ describe('walkEntityPropertyAndMapDateStrAsMoment', () => {
       }]
     }
 
-    walkEntityPropertyAndMapDateStrAsMoment(stayAbroadsList)
+    walkPropertiesAndMapDateStrAsMoment(stayAbroadsList)
     expect(stayAbroadsList.staysAbroad[0].beginDate).toStrictEqual(moment("2020-09-16T06:00:18.000Z"))
     expect(stayAbroadsList.staysAbroad[0].endDate).toStrictEqual(moment("2020-09-01T06:00:22.000Z"))
   })
